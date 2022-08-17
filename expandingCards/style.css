@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+/*   flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* this is wrapped around all the panels */
+/* thanks to display flex we can have the panels line up horizontally across from each other */
+.container {
+  display: flex;
+/*   imagine vw as slices so out of 100 slices we are taking up 90 */
+  width: 90vw;
+}
+
+.panel {
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+/*   flex allows us to shrink or grow our items */
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease;
+}
+
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+/*   when it's not active, hide the title */
+  opacity: 0;
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opactiy 0.3s ease-in 0.4s;
+}
+
+/* this is what happens when the width is under 480px  */
+@media(max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+
+/*   we are going to hide the 4th and 5th panel */
+  .panel:nth-of-type(4),.panel:nth-of-type(5) {
+    display: none;
+  }
+}
