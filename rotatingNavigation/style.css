@@ -82,3 +82,8 @@ html, body {
 .content h1 {
   margin: 0;
 }
+
+.content small {
+  color: #555;
+  font-style: italic;
+}
