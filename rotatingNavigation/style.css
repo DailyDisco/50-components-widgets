@@ -68,3 +68,13 @@ html, body {
   transform: rotate(90deg);
   transform-origin: top left;
 }
+
+
+.content img {
+  max-width: 100%;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 50px auto;
+} 
